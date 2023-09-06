@@ -16,7 +16,7 @@
 <#@ import namespace="Microsoft.Extensions.DependencyInjection" #>
 <#
     // Template version: 703 - please do NOT remove this line
-    if (!ProductInfo.GetVersion().StartsWith("7.0"))
+    if (!SongInfo.GetVersion().StartsWith("7.0"))
     {
         Warning("Your templates were created using an older version of Entity Framework. Additional features and bug fixes may be available. See https://aka.ms/efcore-docs-updating-templates for more information.");
     }

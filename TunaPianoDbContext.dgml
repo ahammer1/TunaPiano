@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-<Node Id="IModel" Label="TunaPianoDbContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" ProductVersion="6.0.0" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]]
+<Node Id="IModel" Label="TunaPianoDbContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" SongVersion="6.0.0" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]]
 Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn
 Relational:MaxIdentifierLength: 63
 RelationshipDiscoveryConvention:InverseNavigationCandidates: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]]" Category="Model" Group="Expanded" />
@@ -94,7 +94,7 @@ RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutab
     <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
     <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
     <Property Id="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
-    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="SongVersion" Label="Song Version" Description="EF Core s version" Group="Model Properties" DataType="System.String" />
     <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
     <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
     <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />

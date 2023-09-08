@@ -223,8 +223,19 @@ app.MapGet("/api/artist/{id}", (int ArtistId, TunaPianoDbContext db) =>
         .Where(a => a.ArtistId == ArtistId)
         .Include(a => a.Song) 
        .FirstOrDefault();
+
     return artist; 
 });
+app.MapGet("/api/genre/{id}", (int GenreId, TunaPianoDbContext db) =>
+{
+    var genre = db.Genre
+        .Where(g => g.GenreId == GenreId)
+        .Include(g => g.Songs)
+        .FirstOrDefault();
+
+    return genre;
+});
+
 
 
 app.Run();

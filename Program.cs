@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using TunaPiano;
 using TunaPiano.Models;
@@ -67,6 +68,29 @@ app.MapDelete("/api/song/{Id}", (int sId, TunaPianoDbContext db) =>
 
     return Results.Ok(s);
 });
+
+app.MapPost("/api/SongGenre", (int Songid, int GenreId, TunaPianoDbContext db) =>
+{
+    var song = db.Song.Include(s => s.Genre).FirstOrDefault(s => s.Songid == Songid);
+
+    if (song == null)
+    {
+        return Results.NotFound();
+    }
+
+    var genreToAdd = db.Genre.FirstOrDefault(g => g.GenreId == GenreId);
+
+    if (genreToAdd == null)
+    {
+        return Results.NotFound();
+    }
+
+    song.Genre.Add(genreToAdd);
+    db.SaveChanges();
+
+    return Results.NoContent();
+});
+
 
 app.MapPut("/song/{Songid}", (int Songid, [FromBody] Song updatedSong, TunaPianoDbContext db) =>
 {
@@ -175,6 +199,22 @@ app.MapPut("/genre/{GenreId}", (int GenreId, [FromBody] Genre updatedGenre, Tuna
     db.SaveChanges();
 
     return Results.Ok(existingGenre);
+});
+
+app.MapGet("/api/SongDetails", (int Songid, TunaPianoDbContext db) =>
+{
+
+    var song = db.Song.Where(s => s.Songid == Songid)
+        .Include(s => s.Artist)
+        .Include(s => s.Genre).ToList();
+        
+
+    if (song == null)
+    {
+        return Results.NotFound();
+    }
+
+    return Results.Ok(song);
 });
 
 

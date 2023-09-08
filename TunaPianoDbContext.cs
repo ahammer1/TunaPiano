@@ -47,15 +47,15 @@ namespace TunaPiano
                     new Genre { GenreId = 4, Description = "Hip-Hop" },
                });
 
-            var GenreSong = modelBuilder.Entity("GenreSong");
-              GenreSong.HasData(new[] {
-            new { GenreId = 1, Songid = 4 },
-            new { GenreId = 2, Songid = 6 },
-           new { GenreId = 3, Songid = 5 },
-             new { GenreId = 4, Songid = 7 } 
-              }
-  );
-
+///*            var GenreSong = modelBuilder.Entity("GenreSong");
+//              GenreSong.HasData(new[] {
+//            new { GenreId = 1, Songid = 4 },
+//            new { GenreId = 2, Songid = 6 },
+//           new { GenreId = 3, Songid = 5 },
+//             new { GenreId = 4, Songid = 7 } 
+//              }
+//  );
+//*/
         }
 
 

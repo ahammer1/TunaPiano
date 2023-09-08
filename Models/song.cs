@@ -10,5 +10,7 @@
         public string length { get; set; }
 
         public List<Genre> Genre { get; set; }
+
+        public Artist Artist { get; set; }
     }
 }

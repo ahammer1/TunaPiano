@@ -217,5 +217,14 @@ app.MapGet("/api/SongDetails", (int Songid, TunaPianoDbContext db) =>
     return Results.Ok(song);
 });
 
+app.MapGet("/api/artist/{id}", (int ArtistId, TunaPianoDbContext db) =>
+{
+    var artist = db.Artist
+        .Where(a => a.ArtistId == ArtistId)
+        .Include(a => a.Song) 
+       .FirstOrDefault();
+    return artist; 
+});
+
 
 app.Run();

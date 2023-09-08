@@ -6,6 +6,6 @@
         public string Name { get; set; }
         public int Age { get; set; }
         public string bio { get; set; }
-
+        public List<Song> Song { get; set; }
     }
 }
